@@ -94,6 +94,7 @@ final class PlagueDr_Core_Conductor {
                 update_option( 'pd_license_token_hash', password_hash( $raw, PASSWORD_DEFAULT ) );
             }
             update_option( 'pd_is_pro', 1 );
+            update_option( 'plaguedr_premium_licensed', '1' );
             delete_option( 'pd_license_token' );
             $this->is_pro = true;
         }
@@ -108,8 +109,6 @@ final class PlagueDr_Core_Conductor {
             'miasma-shield'       => $base_path . 'miasma-shield/miasma-shield.php',
             'pixel-pure'          => $base_path . 'pixel-pure/pixel-pure.php',
         );
-
-        // Proxy crawler removed from distribution by request (avoid loading missing pro-only module).
 
         foreach ( $modules as $key => $path ) {
             if ( file_exists( $path ) ) {
@@ -186,6 +185,7 @@ final class PlagueDr_Core_Conductor {
                         update_option( 'pd_license_token_hash', password_hash( $new_token, PASSWORD_DEFAULT ) );
                     }
                     update_option( 'pd_is_pro', 1 );
+                    update_option( 'plaguedr_premium_licensed', '1' );
                     delete_option( 'pd_license_token' );
 
                     // Ensure current request reflects pro state so other settings save correctly
@@ -198,6 +198,7 @@ final class PlagueDr_Core_Conductor {
                     // Invalid or non-pro token: remove pro flag and any stored hash
                     delete_option( 'pd_is_pro' );
                     delete_option( 'pd_license_token_hash' );
+                    delete_option( 'plaguedr_premium_licensed' );
                     update_option( 'pd_license_token', $new_token );
 
                     // Turn off cron if they remove or invalidate the key

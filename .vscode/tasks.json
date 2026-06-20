@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "verify-shell",
+			"type": "shell",
+			"command": "echo hello from task",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "package-plugin",
+			"type": "shell",
+			"command": "python -c \"import os, zipfile, pathlib; repo = pathlib.Path(r'C:\\Users\\Pappi\\Documents\\GitHub\\cured-diagnostics'); out = pathlib.Path(r'C:\\Users\\Pappi\\Documents\\GitHub\\chdfinal.zip'); if out.exists(): out.unlink(); root = repo.name; with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as zf: for file in repo.rglob('*'): if file.is_file() and '.git' not in file.parts and file.suffix.lower() != '.zip': arc = pathlib.PurePosixPath(root, file.relative_to(repo)) ; zf.write(file, arc.as_posix()); print(f'Created {out}'); print(f'Files added: {sum(1 for _ in repo.rglob(\"*\") if _.is_file() and \".git\" not in _.parts and _.suffix.lower() != \".zip\")}\")",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "package-plugin-script",
+			"type": "shell",
+			"command": "python package_plugin.py",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "package-plugin-ps1",
+			"type": "shell",
+			"command": "powershell -ExecutionPolicy Bypass -File package_plugin.ps1",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

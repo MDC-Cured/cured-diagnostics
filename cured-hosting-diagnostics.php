@@ -25,11 +25,12 @@ require_once CHD_PATH . 'class-seo-admin.php';
 require_once CHD_PATH . 'class-sentinel.php';
 require_once CHD_PATH . 'class-media-pipeline.php';
 require_once CHD_PATH . 'class-copilot.php';
+require_once CHD_PATH . 'admin/admin-dashboard.php';
 // Optional gallery maker: only include if present in this release.
 if ( file_exists( CHD_PATH . 'class-gallery-maker.php' ) ) {
     require_once CHD_PATH . 'class-gallery-maker.php';
 }
-// Optional affiliate/banner module: only include if present in this release.
+// Banner/affiliate support is part of the package and should load when available.
 if ( file_exists( CHD_PATH . 'class-banner-affiliate.php' ) ) {
     require_once CHD_PATH . 'class-banner-affiliate.php';
 }
@@ -64,6 +65,9 @@ function cured_hosting_diagnostics_init() {
     }
     if ( class_exists( 'PlagueDr_Airbag' ) ) {
         PlagueDr_Airbag::init();
+    }
+    if ( class_exists( 'PlagueDr_Banner_Affiliate' ) ) {
+        PlagueDr_Banner_Affiliate::init();
     }
 }
 

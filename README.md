@@ -65,8 +65,7 @@ This plugin bundle is designed to keep everything in one place while delivering 
 - Remote video optimization via Zencoder
 - Remote image/video gallery builder
 - Premium SEO enhancements and JSON-LD schema
-- Banner placement and affiliate manager
-- Proxy crawler with harvest/test status dashboard
+- Banner and affiliate management with shortcodes
 - AI-powered code assistant
 
 ## Why it’s valuable
@@ -78,11 +77,11 @@ This plugin bundle is designed to keep everything in one place while delivering 
 
 ## Installation
 
-1. Copy the folder into your WordPress installation under:
+1. Copy the repository root into your WordPress installation under:
    - `wp-content/plugins/cured-hosting-diagnostics`
 2. Activate the plugin from **WordPress Admin > Plugins**
-3. Go to **Settings > PlagueDr License** and enter the premium token
-4. Configure the modules from their respective settings pages
+3. Go to **Settings > PlagueDr License** and enter the premium token if needed
+4. Configure the available modules from their settings pages, including **Banner Manager** for affiliate/banner shortcodes
 
 ## Core files and structure
 
@@ -97,11 +96,9 @@ This plugin is built by curedhosting.com and designed to direct additional site 
 - `class-media-pipeline.php` - remote video optimization gateway
 - `class-copilot.php` - premium code assistant backend
 - `class-gallery-maker.php` - remote gallery builder and shortcode renderer
-- `class-banner-affiliate.php` - premium banner placements and affiliate manager
-- `pixel-pure/pixel-pure.php` - image optimizer with resize and watermark
-- `proxy-crawler/proxy-crawler-core.php` - proxy crawler engine
-- `proxy-crawler/proxy-crawler-admin.php` - crawler admin UI
-- `class-airbag.php` - supplemental module
+- `class-banner-affiliate.php` - banner and affiliate shortcodes plus settings management
+- `pixel-pure/pixel-pure.php` - image optimizer with resize and watermark support
+- `class-airbag.php` - supplemental crash protection module
 - `beak-armor.php` - supplemental module
 - `leech-drain-cache.php` - supplemental module
 - `login-sentinel/login-sentinel.php` - supplemental module
@@ -112,6 +109,7 @@ This plugin is built by curedhosting.com and designed to direct additional site 
 
 - Premium features are gated by the license token stored in the plugin options.
 - Galleries and banners use shortcodes for flexible placement.
+- Banner campaigns and affiliate links are configured from **Settings > Banner Manager**.
 - SEO settings are managed in the Media Pipeline admin page.
 - Image optimization and watermarking work on upload and legacy media via bulk processing.
 

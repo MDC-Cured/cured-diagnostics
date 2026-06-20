@@ -19,7 +19,7 @@ What this plugin does (plain English):
 - Adds SEO improvements like better social preview metadata and structured data for search engines.
 - Lets you create galleries from remote image and video URLs with a shortcode.
 - Lets you manage banner ads and affiliate links from the WordPress dashboard.
-- Includes premium tools for proxy crawling, a code assistant, and advanced site safety.
+- Includes premium tools for a code assistant and advanced site safety.
 
 1. Copy the plugin folder into WordPress:
    - Place the entire directory at:
@@ -35,8 +35,6 @@ What this plugin does (plain English):
      - class-gallery-maker.php
      - class-banner-affiliate.php
      - pixel-pure/pixel-pure.php
-     - proxy-crawler/proxy-crawler-core.php
-     - proxy-crawler/proxy-crawler-admin.php
      - class-airbag.php
      - beak-armor.php
      - leech-drain-cache.php
@@ -76,8 +74,6 @@ What this plugin does (plain English):
    - Root module files: plaguedr-core.php, class-diagnostics.php, class-seo.php, class-seo-admin.php, class-media-pipeline.php, class-copilot.php, class-gallery-maker.php, class-banner-affiliate.php, class-airbag.php, beak-armor.php, leech-drain-cache.php
    - Subfolders:
      - pixel-pure/pixel-pure.php
-     - proxy-crawler/proxy-crawler-core.php
-     - proxy-crawler/proxy-crawler-admin.php
      - login-sentinel/login-sentinel.php
      - code-assistant/code-assistant.php
      - miasma-shield/miasma-shield.php

@@ -44,9 +44,9 @@ Plugin Breakage Test Checklist
    - Enable advanced schema
    - Confirm the page source contains og:title, og:description, og:url, and JSON-LD schema on a post
 
-9. Proxy Crawler and Premium Pages
-   - If premium is active, access the crawler and gallery admin pages
-   - Confirm the crawler admin UI loads
+9. Banner & Affiliate Pages
+   - If banner support is enabled, access Settings > Banner Manager
+   - Confirm the banner/affiliate configuration page loads
 
 10. Documentation and Files
    - Confirm `README.md`, `INSTALL_INSTRUCTIONS.txt`, and `PLUGIN_SUITE_OVERVIEW.txt` are present in the package

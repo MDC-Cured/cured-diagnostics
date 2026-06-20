@@ -15,7 +15,23 @@ class PlagueDr_Diagnostics {
     }
 
     public static function is_premium_active() {
-        return '1' === get_option( 'plaguedr_premium_licensed', '0' );
+        if ( '1' === get_option( 'plaguedr_premium_licensed', '0' ) ) {
+            return true;
+        }
+
+        if ( get_option( 'pd_is_pro', false ) ) {
+            update_option( 'plaguedr_premium_licensed', '1' );
+            return true;
+        }
+
+        $legacy_token = get_option( 'pd_license_token', '' );
+        if ( $legacy_token && md5( $legacy_token ) === md5( 'plaguedr_pro_elite' ) ) {
+            update_option( 'plaguedr_premium_licensed', '1' );
+            update_option( 'pd_is_pro', 1 );
+            return true;
+        }
+
+        return false;
     }
 
     public static function get_status() {
